@@ -6,7 +6,7 @@ args = parser.parse_args()
 main(args.url)
 
 
-def downloadData(url):
+def downloadData(url, values=None):
     """Downloads the data"""
     import urllib.request
 
@@ -19,9 +19,29 @@ def downloadData(url):
         the_page = response.read()
 
     return response
-def main(url):
-    print(f"Running main with URL = {url}...")
+def page_images(downloadData):
+    import re
+        items = re.search('^/.')
+        image_hits = re.search('^[\.jpg , \.png , \.gif]')
+    image% = re.count( image_hits / items )
+    print("image% + '%'")
 
+def popular_browser(downloadData):
+    import re
+        Mozilla_hits = re.search('^[Mozilla]')
+        Chrome_hits = re.search('^[Chrome]')
+        IE_hits = re.search('^[Expolorer]')
+        Safari_hits = re.search('^[Safari]')
+
+    def high_browser_usage
+        if Mozilla_hits > Chrome_hits + IE_hits + Safari_hits:
+            print('Firefox is the most used browser that day')
+        elif Chrome_hits > Mozilla_hits + IE_hits + Safari_hits:
+            print('Chrome is the most used browser that day')
+        elif IE_hits > Mozilla_hits + Chrome_hits + Safari_hits:
+            print('Internet Explorer is the most used browser that day')
+        elif Safari_hits > Mozilla_hits + Chrome_hits + IE_hits:
+            print('Safari is the most used browser that day')
 
 if __name__ == "__main__":
     """Main entry point"""
